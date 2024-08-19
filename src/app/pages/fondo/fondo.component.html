@@ -1,0 +1,10 @@
+<div>
+  <h2>Lista de Fondos</h2>
+
+  <ul>
+    <li *ngFor="let fondo of fondos">
+      {{ fondo.nombre }} - Monto Mínimo: {{ fondo.montoMinimo | currency:'COP' }}
+    </li>
+  </ul>
+</div>
+

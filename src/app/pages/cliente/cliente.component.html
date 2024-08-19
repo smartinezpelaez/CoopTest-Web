@@ -1,0 +1,11 @@
+<div>
+  <h2>Crear Cliente</h2>
+
+  <label for="nombre">Nombre del Cliente:</label>
+  <input id="nombre" [(ngModel)]="cliente.nombre">
+
+  <label for="saldo">Saldo Inicial:</label>
+  <input id="saldo" [(ngModel)]="cliente.saldo" readonly>
+
+  <button (click)="crearCliente()">Crear Cliente</button>
+</div>

@@ -1,0 +1,14 @@
+<div>
+  <h2>Historial de Transacciones</h2>
+
+  <label for="clienteId">ID del Cliente:</label>
+  <input id="clienteId" [(ngModel)]="clienteId">
+
+  <button (click)="verTransacciones()">Ver Transacciones</button>
+
+  <ul>
+    <li *ngFor="let transaccion of transacciones">
+      {{ transaccion.tipo }} - Fondo: {{ transaccion.fondoId }} - Monto: {{ transaccion.monto | currency:'COP' }} - Fecha: {{ transaccion.fecha | date:'short' }}
+    </li>
+  </ul>
+</div>
