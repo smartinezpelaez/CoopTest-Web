@@ -46,7 +46,11 @@ export class ClienteComponent {
         console.log('Cliente creado con éxito', response);
       },
       error: (error) => {
-        this.mensajeError = 'Error al crear el cliente';
+        if (error.status === 400 && error.error?.mensaje?.includes('Ya existe un cliente con el ID')) {
+          this.mensajeError = `Error: ${error.error.mensaje}`;
+        } else {
+          this.mensajeError = 'Error al crear el cliente';
+        }
         this.mensajeExito = null;
 
         console.error('Error al crear el cliente', error);

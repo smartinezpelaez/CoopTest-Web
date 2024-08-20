@@ -13,7 +13,7 @@ export class FondoComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getFondos().subscribe({
+    this.apiService.obtenerFondos().subscribe({
       next: (data) => {
         this.fondos = data;
       },

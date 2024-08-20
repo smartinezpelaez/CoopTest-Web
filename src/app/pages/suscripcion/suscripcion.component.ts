@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from '../../services/cliente.service';
+import { ApiService } from '../../services/api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class SuscripcionComponent implements OnInit {
   mensajeError: string | null = null;
   mensajeExito: string | null = null;
 
-  constructor(private clienteService: ClienteService, private fb: FormBuilder) {
+  constructor(private apiService: ApiService, private fb: FormBuilder) {
     this.suscripcionForm = this.fb.group({
       clienteId: ['', Validators.required],
       fondoId: ['', Validators.required],
@@ -21,14 +21,14 @@ export class SuscripcionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.clienteService.obtenerFondos().subscribe(data => {
+    this.apiService.obtenerFondos().subscribe(data => {
       this.fondos = data;
     });
   }
 
   suscribir(): void {
     if (this.suscripcionForm.valid) {
-      this.clienteService.suscribirCliente(this.suscripcionForm.value).subscribe({
+      this.apiService.suscribirCliente(this.suscripcionForm.value).subscribe({
         next: () => {
           this.mensajeExito = 'Suscripción exitosa';
           this.mensajeError = null;

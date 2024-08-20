@@ -19,7 +19,7 @@ export class TransaccionComponent implements OnInit {
 
   verTransacciones(): void {
     if (this.clienteId) {
-      this.apiService.getTransacciones(this.clienteId).subscribe({
+      this.apiService.obtenerTransacciones(this.clienteId).subscribe({
         next: (data) => {
           this.transacciones = data;
         },

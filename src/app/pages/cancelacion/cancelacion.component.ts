@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ClienteService } from '../../services/cliente.service';
+import { ApiService } from '../../services/api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ export class CancelacionComponent {
   mensajeExito: string | null = null;
   mensajeError: string | null = null;
 
-  constructor(private clienteService: ClienteService, private fb: FormBuilder) {
+  constructor(private apiService: ApiService, private fb: FormBuilder) {
     this.cancelacionForm = this.fb.group({
       clienteId: ['', Validators.required],
       fondoId: ['', Validators.required],
@@ -22,7 +22,7 @@ export class CancelacionComponent {
   cancelar(): void {
     if (this.cancelacionForm.valid) {
       const { clienteId, fondoId } = this.cancelacionForm.value;
-      this.clienteService.cancelarSuscripcion(clienteId, fondoId).subscribe({
+      this.apiService.cancelarSuscripcion(clienteId, fondoId).subscribe({
         next: () => {
           this.mensajeExito = 'Cancelación exitosa';
           this.mensajeError = null;
