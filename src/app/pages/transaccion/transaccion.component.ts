@@ -13,9 +13,7 @@ export class TransaccionComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
-    // Aquí puedes inicializar la lista de transacciones si ya tienes el clienteId
-  }
+  ngOnInit(): void {}
 
   verTransacciones(): void {
     if (this.clienteId) {

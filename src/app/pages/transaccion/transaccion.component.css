@@ -96,7 +96,22 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Transaction item styling */
+.transaccion-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Transaction info grouping */
+.transaccion-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Transaction details styling */
+.transaccion-id,
 .transaccion-tipo {
   font-weight: 700;
   color: #007bff;
@@ -105,8 +120,6 @@
 .transaccion-detalle,
 .transaccion-monto,
 .transaccion-fecha {
-  display: block;
-  margin-top: 5px;
   color: #555;
 }
 

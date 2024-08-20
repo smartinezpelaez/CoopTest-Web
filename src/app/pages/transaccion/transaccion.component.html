@@ -11,11 +11,18 @@
   <div *ngIf="transacciones.length > 0" class="transacciones-lista">
     <h3>Transacciones:</h3>
     <ul>
-      <li *ngFor="let transaccion of transacciones">
-        <span class="transaccion-tipo">{{ transaccion.tipo }}</span>
-        <span class="transaccion-detalle">- Fondo: {{ transaccion.fondoId }}</span>
-        <span class="transaccion-monto">- Monto: {{ transaccion.monto | currency:'COP' }}</span>
-        <span class="transaccion-fecha">- Fecha: {{ transaccion.fecha | date:'short' }}</span>
+      <li *ngFor="let transaccion of transacciones" class="transaccion-item">
+        <div class="transaccion-info">
+          <span class="transaccion-id">ID: {{ transaccion.id }}</span>
+          <span class="transaccion-tipo">Tipo: {{ transaccion.tipoTransaccion }}</span>
+        </div>
+        <div class="transaccion-info">
+          <span class="transaccion-detalle">Fondo: {{ transaccion.idFondo }}</span>
+          <span class="transaccion-monto">Monto: {{ transaccion.monto | currency:'COP' }}</span>
+        </div>
+        <div class="transaccion-fecha">
+          Fecha: {{ transaccion.fechaTransaccion | date:'short' }}
+        </div>
       </li>
     </ul>
   </div>
@@ -24,4 +31,3 @@
     No se encontraron transacciones para este cliente.
   </div>
 </div>
-

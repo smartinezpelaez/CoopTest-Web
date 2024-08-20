@@ -1,8 +1,8 @@
 export interface TransaccionDTO {
-  id?: string;
-  clienteId?: string;
-  fondoId?: string;
-  tipo?: string; // 'Apertura' o 'Cancelación'
-  monto?: number;
-  fecha?: Date;
+  id: string;
+  idCliente: string;
+  idFondo: string;
+  tipoTransaccion: string;
+  fechaTransaccion: Date;
+  monto: number;          
 }
