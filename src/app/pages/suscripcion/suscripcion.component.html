@@ -1,17 +1,17 @@
-<form [formGroup]="suscripcionForm" (ngSubmit)="suscribir()">
-  <div>
+<form class="suscripcion-form" [formGroup]="suscripcionForm" (ngSubmit)="suscribir()">
+  <div class="form-group">
     <label for="clienteId">ID del Cliente</label>
-    <input id="clienteId" formControlName="clienteId" type="text">
+    <input id="clienteId" formControlName="clienteId" type="text" placeholder="Ingresa el ID del Cliente">
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="fondoId">Selecciona un Fondo</label>
     <select id="fondoId" formControlName="fondoId">
       <option *ngFor="let fondo of fondos" [value]="fondo.id">{{ fondo.nombre }} - Mínimo: {{ fondo.montoMinimo | currency }}</option>
     </select>
   </div>
 
-  <div *ngIf="mensajeError" style="color: red;">{{ mensajeError }}</div>
+  <div *ngIf="mensajeError" class="error-message">{{ mensajeError }}</div>
 
-  <button type="submit" [disabled]="suscripcionForm.invalid">Suscribirse</button>
+  <button type="submit" [disabled]="suscripcionForm.invalid" class="btn-submit">Suscribirse</button>
 </form>

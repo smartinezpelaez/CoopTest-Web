@@ -1,13 +1,13 @@
-<form [formGroup]="cancelacionForm" (ngSubmit)="cancelar()">
-  <div>
+<form class="cancelacion-form" [formGroup]="cancelacionForm" (ngSubmit)="cancelar()">
+  <div class="form-group">
     <label for="clienteId">ID del Cliente</label>
-    <input id="clienteId" formControlName="clienteId" type="text">
+    <input id="clienteId" formControlName="clienteId" type="text" placeholder="Ingresa el ID del Cliente">
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="fondoId">ID del Fondo</label>
-    <input id="fondoId" formControlName="fondoId" type="text">
+    <input id="fondoId" formControlName="fondoId" type="text" placeholder="Ingresa el ID del Fondo">
   </div>
 
-  <button type="submit" [disabled]="cancelacionForm.invalid">Cancelar Suscripción</button>
+  <button type="submit" [disabled]="cancelacionForm.invalid" class="btn-submit">Cancelar Suscripción</button>
 </form>

@@ -1,0 +1,58 @@
+/* Container for the funds list */
+.fondo-lista-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.fondo-lista-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Container for the individual fund cards */
+.fondo-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Styling for individual fund cards */
+.fondo-tarjeta {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+/* Fund name styling */
+.fondo-tarjeta h3 {
+  margin: 0 0 10px;
+  color: #007bff;
+  font-size: 20px;
+}
+
+/* Fund minimum amount styling */
+.fondo-tarjeta p {
+  margin: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.fondo-tarjeta p span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Hover effect for the fund cards */
+.fondo-tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

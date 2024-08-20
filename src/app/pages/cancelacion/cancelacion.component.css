@@ -1,0 +1,70 @@
+/* Main form container */
+.cancelacion-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9fb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Input field styling */
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+/* Placeholder styling */
+.form-group input::placeholder {
+  color: #999;
+}
+
+/* Input focus effect */
+.form-group input:focus {
+  border-color: #dc3545; /* Red border to indicate cancellation */
+  outline: none;
+}
+
+/* Submit button styling */
+.btn-submit {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #dc3545; /* Red button to indicate cancellation */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Submit button hover effect */
+.btn-submit:hover {
+  background-color: #b52a3a;
+}
+
+/* Disabled submit button styling */
+.btn-submit[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

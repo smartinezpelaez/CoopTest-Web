@@ -1,14 +1,27 @@
-<div>
+<div class="transacciones-container">
   <h2>Historial de Transacciones</h2>
 
-  <label for="clienteId">ID del Cliente:</label>
-  <input id="clienteId" [(ngModel)]="clienteId">
+  <div class="form-group">
+    <label for="clienteId">ID del Cliente:</label>
+    <input id="clienteId" [(ngModel)]="clienteId" name="clienteId" placeholder="Ingresa el ID del cliente">
+  </div>
 
-  <button (click)="verTransacciones()">Ver Transacciones</button>
+  <button class="btn-submit" (click)="verTransacciones()">Ver Transacciones</button>
 
-  <ul>
-    <li *ngFor="let transaccion of transacciones">
-      {{ transaccion.tipo }} - Fondo: {{ transaccion.fondoId }} - Monto: {{ transaccion.monto | currency:'COP' }} - Fecha: {{ transaccion.fecha | date:'short' }}
-    </li>
-  </ul>
+  <div *ngIf="transacciones.length > 0" class="transacciones-lista">
+    <h3>Transacciones:</h3>
+    <ul>
+      <li *ngFor="let transaccion of transacciones">
+        <span class="transaccion-tipo">{{ transaccion.tipo }}</span>
+        <span class="transaccion-detalle">- Fondo: {{ transaccion.fondoId }}</span>
+        <span class="transaccion-monto">- Monto: {{ transaccion.monto | currency:'COP' }}</span>
+        <span class="transaccion-fecha">- Fecha: {{ transaccion.fecha | date:'short' }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="transacciones.length === 0" class="no-transacciones">
+    No se encontraron transacciones para este cliente.
+  </div>
 </div>
+

@@ -1,11 +1,15 @@
-<div>
+<div class="crear-cliente-container">
   <h2>Crear Cliente</h2>
 
-  <label for="nombre">Nombre del Cliente:</label>
-  <input id="nombre" [(ngModel)]="cliente.nombre">
+  <div class="form-group">
+    <label for="nombre">Nombre del Cliente:</label>
+    <input id="nombre" [(ngModel)]="cliente.nombre" name="nombre" placeholder="Ingresa el nombre del cliente">
+  </div>
 
-  <label for="saldo">Saldo Inicial:</label>
-  <input id="saldo" [(ngModel)]="cliente.saldo" readonly>
+  <div class="form-group">
+    <label for="saldo">Saldo Inicial:</label>
+    <input id="saldo" [(ngModel)]="cliente.saldo" name="saldo" readonly placeholder="Saldo inicial se calculará automáticamente">
+  </div>
 
-  <button (click)="crearCliente()">Crear Cliente</button>
+  <button class="btn-submit" (click)="crearCliente()">Crear Cliente</button>
 </div>
