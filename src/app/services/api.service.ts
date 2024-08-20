@@ -10,13 +10,13 @@ import { TransaccionDTO } from '../models/transaccion.model';
 })
 export class ApiService {
 
-  private apiUrl = 'https://localhost:7122/api'; // Cambia esta URL por la de tu API
+  private apiUrl = 'https://localhost:7122/api';
 
   constructor(private http: HttpClient) { }
 
   // Métodos para Cliente
-  crearCliente(cliente: ClienteDTO): Observable<any> {
-    return this.http.post(`${this.apiUrl}/Cliente/crear-cliente`, cliente);
+  crearCliente(cliente: ClienteDTO): Observable<ClienteDTO> {
+    return this.http.post<ClienteDTO>(`${this.apiUrl}/cliente/crear-cliente`, cliente);;
   }
 
   // Métodos para Fondo

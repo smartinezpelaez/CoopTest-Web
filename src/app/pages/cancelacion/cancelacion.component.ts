@@ -9,6 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CancelacionComponent {
   cancelacionForm: FormGroup;
+  mensajeExito: string | null = null;
+  mensajeError: string | null = null;
 
   constructor(private clienteService: ClienteService, private fb: FormBuilder) {
     this.cancelacionForm = this.fb.group({
@@ -22,12 +24,20 @@ export class CancelacionComponent {
       const { clienteId, fondoId } = this.cancelacionForm.value;
       this.clienteService.cancelarSuscripcion(clienteId, fondoId).subscribe({
         next: () => {
-          alert('Cancelación exitosa');
+          this.mensajeExito = 'Cancelación exitosa';
+          this.mensajeError = null;
+
+          // Limpiar el formulario después de la cancelación exitosa
+          this.cancelacionForm.reset();
         },
-        error: (err) => {
-          alert('Error al cancelar la suscripción');
+        error: () => {
+          this.mensajeError = 'Error al cancelar la suscripción';
+          this.mensajeExito = null;
         }
       });
+    } else {
+      this.mensajeError = 'Por favor, complete todos los campos requeridos.';
+      this.mensajeExito = null;
     }
   }
 }

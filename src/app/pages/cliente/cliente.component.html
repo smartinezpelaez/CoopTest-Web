@@ -2,8 +2,15 @@
   <h2>Crear Cliente</h2>
 
   <div class="form-group">
+    <label for="id">ID del Cliente:</label>
+    <input id="id" [(ngModel)]="cliente.id" name="id" placeholder="Ingresa el ID del cliente">
+    <div *ngIf="errores.id" class="mensaje-error">{{ errores.id }}</div>
+  </div>
+
+  <div class="form-group">
     <label for="nombre">Nombre del Cliente:</label>
     <input id="nombre" [(ngModel)]="cliente.nombre" name="nombre" placeholder="Ingresa el nombre del cliente">
+    <div *ngIf="errores.nombre" class="mensaje-error">{{ errores.nombre }}</div>
   </div>
 
   <div class="form-group">
@@ -12,4 +19,8 @@
   </div>
 
   <button class="btn-submit" (click)="crearCliente()">Crear Cliente</button>
+
+  <!-- Mensajes de éxito y error -->
+  <div *ngIf="mensajeExito" class="mensaje-exito">{{ mensajeExito }}</div>
+  <div *ngIf="mensajeError" class="mensaje-error">{{ mensajeError }}</div>
 </div>

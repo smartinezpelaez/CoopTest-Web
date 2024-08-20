@@ -10,7 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SuscripcionComponent implements OnInit {
   suscripcionForm: FormGroup;
   fondos: any[] = [];
-  mensajeError: string = '';
+  mensajeError: string | null = null;
+  mensajeExito: string | null = null;
 
   constructor(private clienteService: ClienteService, private fb: FormBuilder) {
     this.suscripcionForm = this.fb.group({
@@ -29,12 +30,20 @@ export class SuscripcionComponent implements OnInit {
     if (this.suscripcionForm.valid) {
       this.clienteService.suscribirCliente(this.suscripcionForm.value).subscribe({
         next: () => {
-          alert('Suscripción exitosa');
+          this.mensajeExito = 'Suscripción exitosa';
+          this.mensajeError = null;
+
+          // Limpiar el formulario después de la suscripción exitosa
+          this.suscripcionForm.reset();
         },
-        error: (err) => {
+        error: () => {
           this.mensajeError = `No tiene saldo disponible para vincularse al fondo ${this.getFondoNombre()}`;
+          this.mensajeExito = null;
         }
       });
+    } else {
+      this.mensajeError = 'Por favor, complete todos los campos requeridos.';
+      this.mensajeExito = null;
     }
   }
 

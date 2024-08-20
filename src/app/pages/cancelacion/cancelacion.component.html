@@ -9,5 +9,8 @@
     <input id="fondoId" formControlName="fondoId" type="text" placeholder="Ingresa el ID del Fondo">
   </div>
 
+  <div *ngIf="mensajeError" class="error-message">{{ mensajeError }}</div>
+  <div *ngIf="mensajeExito" class="success-message">{{ mensajeExito }}</div>
+
   <button type="submit" [disabled]="cancelacionForm.invalid" class="btn-submit">Cancelar Suscripción</button>
 </form>

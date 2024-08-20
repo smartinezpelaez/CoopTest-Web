@@ -12,6 +12,7 @@
   </div>
 
   <div *ngIf="mensajeError" class="error-message">{{ mensajeError }}</div>
+  <div *ngIf="mensajeExito" class="success-message">{{ mensajeExito }}</div>
 
   <button type="submit" [disabled]="suscripcionForm.invalid" class="btn-submit">Suscribirse</button>
 </form>

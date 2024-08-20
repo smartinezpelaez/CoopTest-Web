@@ -17,7 +17,7 @@ interface SuscripcionFondoDTO {
   providedIn: 'root',
 })
 export class ClienteService {
-  private apiUrl = 'https://localhost:7122/api/Cliente/crear-cliente';  // Cambia la URL base según tu configuración
+  private apiUrl = 'https://localhost:7122/api/Cliente'; 
 
   constructor(private http: HttpClient) {}
 

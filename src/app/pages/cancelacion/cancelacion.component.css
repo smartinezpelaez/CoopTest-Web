@@ -44,6 +44,22 @@
   outline: none;
 }
 
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Success message styling */
+.success-message {
+  color: #28a745; /* Green color for success */
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 /* Submit button styling */
 .btn-submit {
   width: 100%;
