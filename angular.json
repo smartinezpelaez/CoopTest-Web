@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CoopTestWEB:build:production"
+              "buildTarget": "CoopTestWEB:build:production"
             },
             "development": {
-              "browserTarget": "CoopTestWEB:build:development"
+              "buildTarget": "CoopTestWEB:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CoopTestWEB:build"
+            "buildTarget": "CoopTestWEB:build"
           }
         },
         "test": {
